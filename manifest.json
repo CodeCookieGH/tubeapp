@@ -1,7 +1,6 @@
 {
     "short_name": "Tube Counter",
-    "name": "Count Tubes",
-    "description": "PWA",
+    "description": "Tube counter PWA",
     "icons": [
         {
             "src": "icon.png",
@@ -12,6 +11,6 @@
     "start_url": ".",
     "display": "standalone",
     "orientation": "portrait",
-    "theme_color": "#00ff00",
+    "theme_color": "#FFFFFF",
     "background_color": "#cf3030"
 }
