@@ -1,0 +1,140 @@
+<html>
+
+	<head>
+	
+		<title>Tube Counter</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1", user-scalable="no">
+		
+		<link rel="icon" type="image/x-icon" href="./favicon.png" />
+		<link rel="manifest" href="./manifest.json">
+		
+		<style>
+		html, body {padding: 0px; margin: 0px;}
+			#result-container
+			{
+				width: 200px;
+				margin: auto;
+				text-align: center;
+			}
+			.inline
+			{
+				display: inline-block;
+			}
+			.input
+			{
+				width: 100%;
+			}
+			#buttons
+			{
+				text-align: center;
+			}
+			
+		</style>
+	
+	</head>
+
+	<body>
+	
+	<div id="result-container">
+		<div>
+			<div id="option-one-tubes" class="inline">0</div>
+			<div class="inline">Tubes</div>
+			<div id="option-one-loose" class="inline">0</div>
+			<div class="inline">Loose</div>
+		</div>
+		
+		<div>OR</div>
+		
+		<div>
+			<div id="option-two-tubes"  class="inline">0</div>
+			<div class="inline">Tubes</div>
+			<div id="option-two-out-of-one" class="inline">0</div>
+			<div class="inline">Out of One</div>
+		</div>
+	</div>
+	
+	<div>
+		<input id="order-amount" class="input" placeholder="Order Amount" type="number" min="0">
+		<input id="amount-per-tube" class="input" placeholder="Amount Per Tube" type="number" min="0">
+	</div>
+	
+	<div id="buttons">
+		<button id="calculate-button">Calculate</button>
+		<button id="clear-button">Clear</button>
+	</div>
+
+
+
+	<script>
+	
+		document.addEventListener("DOMContentLoaded", function(){
+		
+			if ('serviceWorker' in navigator) {
+			  window.addEventListener('load', function() {
+				navigator.serviceWorker.register('./sw.js').then(function(registration) {
+				  // Registration was successful
+				  console.log('ServiceWorker registration successful with scope: ', registration.scope);
+				}, function(err) {
+				  // registration failed :(
+				  console.log('ServiceWorker registration failed: ', err);
+				});
+			  });
+			}
+		
+			
+			
+			document.getElementById("calculate-button").onclick = function () 
+			{
+				var orderAmount = parseInt(document.getElementById("order-amount").value);
+				var amountPerTube = parseInt(document.getElementById("amount-per-tube").value);
+				
+				if(!Number.isNaN(orderAmount) && !Number.isNaN(amountPerTube) && orderAmount != 0 && amountPerTube != 0)
+				{
+					
+					var timesDivisible = -1;
+					var order = Math.abs(orderAmount);
+					var amountPer = Math.abs(amountPerTube);
+					
+					for (var i = 0; i <= order; i += amountPer)
+					{
+						timesDivisible++;
+					}
+					
+					document.getElementById("option-one-tubes").innerHTML = timesDivisible;
+					document.getElementById("option-one-loose").innerHTML = (order - (timesDivisible * amountPer));
+					
+					
+					if (timesDivisible * amountPer != order)
+					{
+						document.getElementById("option-two-tubes").innerHTML = timesDivisible + 1;
+						document.getElementById("option-two-out-of-one").innerHTML = (amountPer - (order - (timesDivisible * amountPer)));
+					}
+					else
+					{
+						document.getElementById("option-two-tubes").innerHTML = 0;
+						document.getElementById("option-two-out-of-one").innerHTML = 0;
+					}
+						
+				}
+
+			}
+			
+			document.getElementById("clear-button").onclick = function () 
+			{
+				document.getElementById("option-one-tubes").innerHTML = 0;
+				document.getElementById("option-one-loose").innerHTML = 0;
+				document.getElementById("option-two-tubes").innerHTML = 0;
+				document.getElementById("option-two-out-of-one").innerHTML = 0;
+				
+				document.getElementById("order-amount").value = "";
+				document.getElementById("amount-per-tube").value = "";
+			}
+		
+		});
+		
+	</script>
+	
+	</body>
+
+</html>
