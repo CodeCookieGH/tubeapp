@@ -1,8 +1,8 @@
 var CACHE_NAME = 'tubeapp';
 	var urlsToCache = [
-	  '/tubeapp',
-	  'favicon.png',
-	  'icon.png'
+	  '/tubeapp/',
+	  '/tubeapp/favicon.png',
+	  '/tubeapp/icon.png'
 	];
 
 	self.addEventListener('install', function(event) {
