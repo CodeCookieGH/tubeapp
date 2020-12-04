@@ -1,6 +1,6 @@
 var CACHE_NAME = 'tubeapp';
 	var urlsToCache = [
-	  '/',
+	  '/tubeapp',
 	  'favicon.png',
 	  'icon.png'
 	];
