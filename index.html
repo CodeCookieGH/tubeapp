@@ -1,10 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 	<head>
 	
 		<title>Tube Counter</title>
 		<meta charset="utf-8">
+		<meta name="Description" content="PWA for counting tubes.">
 		<meta name="viewport" content="width=device-width, initial-scale=1", user-scalable="no">
+		<meta name="theme-color" content="#ff0000"/>
 		
 		<link rel="icon" type="image/x-icon" href="./favicon.png" />
 		<link rel="manifest" href="./manifest.json">
@@ -15,12 +18,14 @@
 		<style>
 			html, body {padding: 0px; margin: 0px; width: 100%; color: #bdbdbd; font-family: roboto;}
 			
+			.center{text-align: center;}
+			
 			.result-table
 			{
 				margin: 10px auto 10px auto;
 				display: table;
-				width: 390px;
 				table-layout: fixed;
+				width: 100%;
 				text-align: center;
 
 			}
@@ -33,7 +38,7 @@
 			#or
 			{
 				font-size: 12px;
-				width: 390px;
+				width: 100%;
 				margin: 0 auto 0 auto;
 				text-align: center;
 			}
@@ -71,12 +76,12 @@
 			input[type=number]
 			{
 				margin: 0px 0 30px 0;
-				padding: 0 0 0 10px;
+				padding: 0 0 0 5px;
 				font-size: 16px;
 				font-weight: 100;
 				border: none;
 				border-bottom: 0.5px solid #bdbdbd;
-				width: 100%;
+				width: 98%;
 				outline: none;
 			}
 			
@@ -88,7 +93,7 @@
 			
 			#button-table-container
 			{
-				width: 390px;
+				width: 100%;
 				margin: 0 auto 0 auto;
 				text-align: center;
 			}
@@ -96,7 +101,6 @@
 			#button-table
 			{
 				display: inline-table;
-				width: 110px;
 				text-align: center;
 		
 			}	
@@ -109,8 +113,6 @@
 				
 				background: #dcdcdc;
 				color: white;
-				width: 80px;
-				height: 40px;
 			}
 			
 		</style>
@@ -120,27 +122,36 @@
 	<body>
 	
 	<div class="result-table">
+	
 		<div class="row">
-			<div id="option-one-tubes" class="cell">0</div>
 			<div class="cell-left">Tubes</div>
-			<div id="option-one-loose" class="cell">0</div>
 			<div class="cell-left">Loose</div>
 		</div>
+		
+		<div class="row">
+			<div id="option-one-tubes" class="cell">0</div>
+			<div id="option-one-loose" class="cell">0</div>
+		</div>
+		
 	</div>
 		
 	<div id="or">OR</div>
 		
 	<div id="result-table-with-margin" class="result-table">
+	
 		<div class="row">
 			<div id="option-two-tubes"  class="cell">0</div>
-			<div class="cell-left">Tubes</div>
 			<div id="option-two-out-of-one" class="cell">0</div>
-			<div class="cell-left">Out of One</div>
-			</div>
 		</div>
+		
+		<div class="row">
+			<div class="cell-left">Tubes</div>
+			<div class="cell-left">Out of One</div>
+		</div>
+		
 	</div>
 	
-	<div>
+	<div class="center">
 		<input id="order-amount" class="input" placeholder="Order Amount" type="number" min="0">
 		<input id="amount-per-tube" class="input" placeholder="Amount Per Tube" type="number" min="0">
 	</div>
