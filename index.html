@@ -6,28 +6,111 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1", user-scalable="no">
 		
-		<link rel="icon" type="image/x-icon" href="favicon.png" />
-		<link rel="manifest" href="manifest.json">
+		<link rel="icon" type="image/x-icon" href="./favicon.png" />
+		<link rel="manifest" href="./manifest.json">
+		
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+		<link href="./css/reset.css" rel="stylesheet" type="text/css">
 		
 		<style>
-		html, body {padding: 0px; margin: 0px;}
-			#result-container
+			html, body {padding: 0px; margin: 0px; width: 100%; color: #bdbdbd; font-family: roboto;}
+			
+			.result-table
 			{
-				width: 200px;
-				margin: auto;
+				margin: 10px auto 10px auto;
+				display: table;
+				width: 390px;
+				table-layout: fixed;
+				text-align: center;
+
+			}
+			
+			#result-table-with-margin
+			{
+				margin: 10px auto 25px auto;
+			}
+			
+			#or
+			{
+				font-size: 12px;
+				width: 300px;
+				margin: 0 auto 0 auto;
 				text-align: center;
 			}
-			.inline
+			
+			.row
 			{
-				display: inline-block;
+				display: table-row;
+
 			}
-			.input
+			
+			#option-one-tubes, #option-one-loose, #option-two-tubes, #option-two-out-of-one
 			{
+				font-size: 58px;
+				font-weight: 500;
+			}
+			
+			.cell
+			{
+				display: table-cell;
+				font-size: 15px;
+				font-weight: 200;
+				vertical-align: middle;
+			}
+			
+			.cell-left
+			{
+				display: table-cell;
+				color: #868686;
+				font-size: 15px;
+				font-weight: 200;
+				vertical-align: middle;
+			}
+		
+			
+			input[type=number]
+			{
+				margin: 0px 0 30px 0;
+				padding: 0 0 0 10px;
+				font-size: 16px;
+				font-weight: 100;
+				border: none;
+				border-bottom: 0.5px solid #bdbdbd;
 				width: 100%;
+				outline: none;
 			}
-			#buttons
+			
+			input[type=number]:focus
+			{
+				outline: none;
+				border-bottom: 2px solid #ff0000;
+			}
+			
+			#button-table-container
+			{
+				width: 300px;
+				margin: 0 auto 0 auto;
+				text-align: center;
+			}
+			
+			#button-table
+			{
+				display: inline-table;
+				width: 110px;
+				text-align: center;
+		
+			}	
+			.button
 			{
 				text-align: center;
+				font-weight: 100;
+				display: table-cell;
+				vertical-align: middle;
+				
+				background: #dcdcdc;
+				color: white;
+				width: 80px;
+				height: 40px;
 			}
 			
 		</style>
@@ -36,21 +119,24 @@
 
 	<body>
 	
-	<div id="result-container">
-		<div>
-			<div id="option-one-tubes" class="inline">0</div>
-			<div class="inline">Tubes</div>
-			<div id="option-one-loose" class="inline">0</div>
-			<div class="inline">Loose</div>
+	<div class="result-table">
+		<div class="row">
+			<div id="option-one-tubes" class="cell">0</div>
+			<div class="cell-left">Tubes</div>
+			<div id="option-one-loose" class="cell">0</div>
+			<div class="cell-left">Loose</div>
 		</div>
+	</div>
 		
-		<div>OR</div>
+	<div id="or">OR</div>
 		
-		<div>
-			<div id="option-two-tubes"  class="inline">0</div>
-			<div class="inline">Tubes</div>
-			<div id="option-two-out-of-one" class="inline">0</div>
-			<div class="inline">Out of One</div>
+	<div id="result-table-with-margin" class="result-table">
+		<div class="row">
+			<div id="option-two-tubes"  class="cell">0</div>
+			<div class="cell-left">Tubes</div>
+			<div id="option-two-out-of-one" class="cell">0</div>
+			<div class="cell-left">Out of One</div>
+			</div>
 		</div>
 	</div>
 	
@@ -59,12 +145,17 @@
 		<input id="amount-per-tube" class="input" placeholder="Amount Per Tube" type="number" min="0">
 	</div>
 	
-	<div id="buttons">
-		<button id="calculate-button">Calculate</button>
-		<button id="clear-button">Clear</button>
+	
+	<div id="button-table-container">
+	
+		<div id="button-table">
+			<div id="calculate-button" class="button">Calculate</div>
+		</div>
+		
+		<div id="button-table">
+			<div id="clear-button" class="button">Clear</div>
+		</div>
 	</div>
-
-
 
 	<script>
 	
