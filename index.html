@@ -16,7 +16,8 @@
 		<link href="./css/reset.css" rel="stylesheet" type="text/css">
 		
 		<style>
-			html, body {padding: 0px; margin: 0px; width: 100%; color: #bdbdbd; font-family: roboto;}
+			html, body {height: 100%; padding: 0px; margin: 0px; width: 100%; color: #bdbdbd; font-family: roboto;}
+			
 			
 			.center{text-align: center;}
 			
@@ -75,7 +76,7 @@
 			
 			input[type=number]
 			{
-				margin: 0px 0 25px 0;
+				margin: 0px 0 30px 0;
 				padding: 0 0 0 5px;
 				font-size: 16px;
 				font-weight: 100;
@@ -90,6 +91,7 @@
 				outline: none;
 				border-bottom: 2px solid #ff0000;
 			}
+			
 			
 			#button-table-container
 			{
@@ -118,57 +120,82 @@
 				color: white;
 			}
 			
+			.content 
+			{
+			  min-height: 100%;
+			  margin: 0 auto -50px;
+			  display: inline-block;
+			}
+			
+			
+			.footer,.push 
+			{
+			  height: 50px;
+			  text-align: center;
+			  font-weight: 100;
+			}
+			
+			
 		</style>
 	
 	</head>
 
 	<body>
 	
-	<div class="result-table">
+		<div class="content">
 	
-		<div class="row">
-			<div class="cell-left">Tubes</div>
-			<div class="cell-left">Loose</div>
-		</div>
+			<div class="result-table">
+			
+				<div class="row">
+					<div class="cell-left">Tubes</div>
+					<div class="cell-left">Loose</div>
+				</div>
+				
+				<div class="row">
+					<div id="option-one-tubes" class="cell">0</div>
+					<div id="option-one-loose" class="cell">0</div>
+				</div>
+				
+			</div>
+				
+			<div id="or">OR</div>
+				
+			<div id="result-table-with-margin" class="result-table">
+			
+				<div class="row">
+					<div id="option-two-tubes"  class="cell">0</div>
+					<div id="option-two-out-of-one" class="cell">0</div>
+				</div>
+				
+				<div class="row">
+					<div class="cell-left">Tubes</div>
+					<div class="cell-left">Out of One</div>
+				</div>
+				
+			</div>
+			
+			<div class="center">
+				<input id="order-amount" class="input" placeholder="Order Amount" type="number" min="0">
+				<input id="amount-per-tube" class="input" placeholder="Amount Per Tube" type="number" min="0">
+			</div>
+			
+			
+			<div id="button-table-container">
+			
+				<div id="button-table">
+					<div id="calculate-button" class="button">Calculate</div>
+				</div>
+				
+				<div id="button-table">
+					<div id="clear-button" class="button">Clear</div>
+				</div>
+			</div>
 		
-		<div class="row">
-			<div id="option-one-tubes" class="cell">0</div>
-			<div id="option-one-loose" class="cell">0</div>
-		</div>
-		
+		 <div class="push"></div>
 	</div>
-		
-	<div id="or">OR</div>
-		
-	<div id="result-table-with-margin" class="result-table">
 	
-		<div class="row">
-			<div id="option-two-tubes"  class="cell">0</div>
-			<div id="option-two-out-of-one" class="cell">0</div>
-		</div>
-		
-		<div class="row">
-			<div class="cell-left">Tubes</div>
-			<div class="cell-left">Out of One</div>
-		</div>
-		
-	</div>
-	
-	<div class="center">
-		<input id="order-amount" class="input" placeholder="Order Amount" type="number" min="0">
-		<input id="amount-per-tube" class="input" placeholder="Amount Per Tube" type="number" min="0">
-	</div>
-	
-	
-	<div id="button-table-container">
-	
-		<div id="button-table">
-			<div id="calculate-button" class="button">Calculate</div>
-		</div>
-		
-		<div id="button-table">
-			<div id="clear-button" class="button">Clear</div>
-		</div>
+	<div class="footer">
+	Jack is the best ;)
 	</div>
 
 	<script>

@@ -1,7 +1,7 @@
 {
-    "short_name": "Tube Counter",
-	"name": "Made by Jack",
-    "description": "PWA",
+    "short_name": "TC",
+	"name": "Tube Counter",
+    "description": "Tube CounterPWA",
     "icons": [
         {
             "src": "icon.png",
