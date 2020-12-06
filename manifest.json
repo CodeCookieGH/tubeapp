@@ -1,7 +1,7 @@
 {
-    "short_name": "Tubes",
-	"name": "Tube Counter",
-    "description": "Tube CounterPWA",
+    "short_name": "TubeCalc",
+	"name": "Tube Calculator",
+    "description": "Tube Calculator PWA",
     "icons": [
         {
             "src": "icon.png",
