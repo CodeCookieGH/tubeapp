@@ -3,6 +3,7 @@ var CACHE_NAME = 'tubeapp';
 	  '/tubeapp/',
 	  '/tubeapp/favicon.png',
 	  '/tubeapp/icon.png',
+	  '/tubeapp/maskable_icon.png',
 	  '/tubeapp/css/reset.css'
 	];
 
